@@ -41,13 +41,17 @@ public class Flight
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public String getDepart() {
+	public String getDepart() 
+	{
 		return depart;
 	}
-	public void setDepart(String depart) {
+	
+	public void setDepart(String depart) 
+	{
 		this.depart = depart;
 	}
-	public String getRetour() {
+	public String getRetour() 
+	{
 		return retour;
 	}
 	public void setRetour(String retour) {
@@ -55,5 +59,8 @@ public class Flight
 	
 	
 }
-}
+	
+	}
+
+
 
