@@ -7,64 +7,34 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="821.0" prefWidth="1392.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FlightController">
+<AnchorPane prefHeight="654.0" prefWidth="1054.0" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FlightController">
    <children>
-      <TableView fx:id="volTable" layoutX="129.0" layoutY="176.0" prefHeight="426.0" prefWidth="480.0">
+      <ImageView fitHeight="764.0" fitWidth="1241.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@download.jpg" />
+         </image>
+      </ImageView>
+      <TableView layoutX="29.0" layoutY="176.0" prefHeight="405.0" prefWidth="568.0">
         <columns>
-          <TableColumn fx:id="prenomColumn" prefWidth="176.0" text="Prenom" />
-          <TableColumn fx:id="nomColumn" prefWidth="177.0" text="Nom" />
-            <TableColumn fx:id="departColumn" prefWidth="166.0" text="Depart" />
-            <TableColumn fx:id="retourColumn" prefWidth="170.0" text="Retour" />
+          <TableColumn fx:id="departColumn" prefWidth="153.0" text="prenom" />
+          <TableColumn fx:id="nomColumn" prefWidth="148.0" text="nom" />
+            <TableColumn fx:id="departColumn" prefWidth="124.0" text="depart" />
+            <TableColumn fx:id="retourColumn" prefWidth="142.0" text="retour" />
         </columns>
       </TableView>
-      <Label layoutX="129.0" layoutY="83.0" prefHeight="93.0" prefWidth="568.0" text="Orginateur de Vol">
-         <font>
-            <Font size="51.0" />
-         </font>
-      </Label>
-      <GridPane layoutX="663.0" layoutY="176.0" prefHeight="426.0" prefWidth="480.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label text="Prenom" />
-            <Label text="Nom" GridPane.rowIndex="1" />
-            <Label text="Date de depart" GridPane.rowIndex="2" />
-            <Label text="Date de retour" GridPane.rowIndex="3" />
-            <TextField fx:id="txtPrenom" GridPane.columnIndex="1" />
-            <TextField fx:id="txtNom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <DatePicker fx:id="dateDep" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <DatePicker fx:id="dateRet" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-         </children>
-      </GridPane>
-      <HBox layoutX="104.0" layoutY="602.0" prefHeight="0.0" prefWidth="1274.0" spacing="100.0">
-         <children>
-            <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
-            <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#updateFlight" text="Modifier" />
-            <Button fx:id="btnRecommencer" mnemonicParsing="false" onAction="#deleteFlight" text="Recommencer" />
-            <Button fx:id="btnEffacer" mnemonicParsing="false" onAction="#clearFields" text="Effacer" />
-         </children>
-      </HBox>
-      <MenuBar layoutX="804.0" layoutY="83.0">
+      <MenuBar layoutX="761.0" layoutY="91.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleNew" text="Nouveau" />
-              <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Ouvrir" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Sauvegarder" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Sauvegarder Sous" />
+                  <MenuItem fx:id="handleNew" mnemonicParsing="false" text="Nouveau" />
+              <MenuItem fx:id="handleOpen" mnemonicParsing="false" text="Ouvrir" />
+                  <MenuItem fx:id="handleSave" mnemonicParsing="false" text="Sauvegarder" />
+                  <MenuItem fx:id="handleSaveAs" mnemonicParsing="false" text="Sauvegarder-Sous" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" text="Finances" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -74,5 +44,40 @@
           </Menu>
         </menus>
       </MenuBar>
+      <Label layoutX="91.0" layoutY="80.0" text="Orginateur de Vol">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Label>
+      <HBox layoutX="29.0" layoutY="602.0" prefHeight="100.0" prefWidth="1132.0" spacing="200.0">
+         <children>
+            <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
+            <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#updateFlight" text="Modifier" />
+            <Button fx:id="btnRecommencer" mnemonicParsing="false" onAction="#clearFields" text="Recommencer" />
+            <Button fx:id="btnEffacer" mnemonicParsing="false" onAction="#deleteFlight" text="Effacer" />
+         </children>
+      </HBox>
+      <GridPane layoutX="620.0" layoutY="176.0" prefHeight="405.0" prefWidth="568.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Prenom" />
+            <Label text="Nom" GridPane.rowIndex="1" />
+            <Label text="Date de Depart" GridPane.rowIndex="2" />
+            <Label text="Date de Retour" GridPane.rowIndex="3" />
+            <TextField fx:id="txtPrenom" GridPane.columnIndex="1" />
+            <TextField fx:id="txtNom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <DatePicker fx:id="dateDep" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="dateRet" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>

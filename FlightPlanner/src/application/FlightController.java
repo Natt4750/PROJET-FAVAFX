@@ -30,6 +30,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class FlightController implements Initializable{
 
@@ -343,6 +345,24 @@ public class FlightController implements Initializable{
 			saveFlightDataToFile(file);
 		}
 	}
+	
+	@FXML
+	void handleFinances()
+	{
+		try {
+			FXMLLoader loader= new FXMLLoader(Main.class.getResource("FinanceCounter.FXML"));
+			AnchorPane pane = loader.load();
+			Scene scene = new Scene(pane);
+			FinanceCounter financecounter=loader.getController();
+			Stage stage=new Stage();
+			stage.setScene(scene);
+			stage.setTitle("Finances");
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 
 }
 
