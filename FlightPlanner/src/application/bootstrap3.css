@@ -2,6 +2,11 @@
 	-fx-body-color : #F5F5F5;
 	-fx-outer-border : #cecece;
 }
+.bodyBay 
+{
+	-fx-background-image: url("download.jpg") ;
+	
+}
 .button:focused, .toggle-button:focused,
 .split-menu-button:focused, .menu-button:focused,
 .number-button:focused,

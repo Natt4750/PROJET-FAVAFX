@@ -14,9 +14,9 @@
             <Image url="@download.jpg" />
          </image>
       </ImageView>
-      <TableView layoutX="29.0" layoutY="176.0" prefHeight="405.0" prefWidth="568.0">
+      <TableView fx:id="volTable" layoutX="29.0" layoutY="176.0" prefHeight="405.0" prefWidth="568.0">
         <columns>
-          <TableColumn fx:id="departColumn" prefWidth="153.0" text="prenom" />
+          <TableColumn fx:id="prenomColumn" prefWidth="153.0" text="prenom" />
           <TableColumn fx:id="nomColumn" prefWidth="148.0" text="nom" />
             <TableColumn fx:id="departColumn" prefWidth="124.0" text="depart" />
             <TableColumn fx:id="retourColumn" prefWidth="142.0" text="retour" />
@@ -44,17 +44,17 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label layoutX="91.0" layoutY="80.0" text="Orginateur de Vol">
+      <Label layoutX="108.0" layoutY="54.0" text="Orginateur de Vol">
          <font>
             <Font size="52.0" />
          </font>
       </Label>
       <HBox layoutX="29.0" layoutY="602.0" prefHeight="100.0" prefWidth="1132.0" spacing="200.0">
          <children>
-            <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
-            <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#updateFlight" text="Modifier" />
-            <Button fx:id="btnRecommencer" mnemonicParsing="false" onAction="#clearFields" text="Recommencer" />
-            <Button fx:id="btnEffacer" mnemonicParsing="false" onAction="#deleteFlight" text="Effacer" />
+            <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#ajouter" styleClass="primary" text="Ajouter" />
+            <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#updateFlight" styleClass="primary" text="Modifier" />
+            <Button fx:id="btnRecommencer" mnemonicParsing="false" onAction="#clearFields" styleClass="warning" text="Recommencer" />
+            <Button fx:id="btnEffacer" mnemonicParsing="false" onAction="#deleteFlight" styleClass="warning" text="Effacer" />
          </children>
       </HBox>
       <GridPane layoutX="620.0" layoutY="176.0" prefHeight="405.0" prefWidth="568.0">
