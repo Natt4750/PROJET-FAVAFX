@@ -99,7 +99,7 @@ public class FlightController implements Initializable{
 
   		volTable.getSelectionModel().selectedItemProperty().addListener((
   				observable, oldValue, newValue)-> showFlights(newValue));
-/
+
   	}
   	
   	@FXML
