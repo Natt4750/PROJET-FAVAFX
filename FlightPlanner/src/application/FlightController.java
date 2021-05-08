@@ -350,6 +350,8 @@ public class FlightController implements Initializable{
 	{
 		try {
 			FXMLLoader loader= new FXMLLoader(Main.class.getResource("FinanceCounter.FXML"));
+			//FXMLLoader loader = new FXMLLoader();
+			//11loader.setLocation(Main.class.getResource("FinanceCounter.FMXL"));
 			AnchorPane pane = loader.load();
 			Scene scene = new Scene(pane);
 			FinanceCounter financecounter=loader.getController();
@@ -362,6 +364,26 @@ public class FlightController implements Initializable{
 		}
 	}
 
+	@FXML
+	void handleConvertisseur()
+	{
+		try {
+			FXMLLoader loader= new FXMLLoader(Main.class.getResource("Convert_Height_Unit.FXML"));
+			//FXMLLoader loader = new FXMLLoader();
+			//11loader.setLocation(Main.class.getResource("FinanceCounter.FMXL"));
+			AnchorPane pane = loader.load();
+			Scene scene = new Scene(pane);
+			Convert_Height_Unit convertisseur=loader.getController();
+			Stage stage=new Stage();
+			stage.setScene(scene);
+			stage.setTitle("Convertisseur");
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+		
+	
 
 }
 

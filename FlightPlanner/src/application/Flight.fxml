@@ -35,6 +35,7 @@
           <Menu mnemonicParsing="false" text="Edit">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#handleFinances" text="Finances" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleConvertisseur" text="Convertir" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
