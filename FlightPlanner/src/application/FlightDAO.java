@@ -6,9 +6,9 @@ import javafx.collections.ObservableList;
 
 public class FlightDAO {
 	
-	public static void insertFlight(String LastName, String FirstName, String Departure, String Return) throws ClassNotFoundException, SQLException
+	public static void insertFlight(String LastName, String FirstName, String Departure, String ReturnD) throws ClassNotFoundException, SQLException
 	{
-		String sql="insert into flightplanner(LastName,FirstName,Departure, Return) values('"+LastName+"','"+FirstName+"','"+Departure+"','"+Return+"')";
+		String sql="insert into flightplanner(LastName,FirstName,Departure, ReturnD) values('"+LastName+"','"+FirstName+"','"+Departure+"','"+ReturnD+"')";
 		try
 		{ 
 			DBUtilitaires.dbExecuteQuery(sql);
@@ -22,7 +22,7 @@ public class FlightDAO {
 	}
 	public static void updateFlight(int ID, String LastName, String FirstName, String Departure, String Return) throws ClassNotFoundException, SQLException
 	{
-		String sql="update flightplanner set LastName='"+LastName+"', FirstName='"+FirstName+"', Departure='"+Departure+"', Return='"+Return+"' where ID= "+ ID;
+		String sql="update flightplanner set LastName='"+LastName+"', FirstName='"+FirstName+"', Departure='"+Departure+"', ReturnD='"+ReturnD+"' where ID= "+ ID;
 		
 		try
 		{
@@ -81,8 +81,8 @@ public class FlightDAO {
 				flight.setId(rsSet.getInt("ID"));
 				flight.setFirstName(rsSet.getString("FirstName"));
 				flight.setLastName(rsSet.getString("LastName"));
-				flight.setDepartment(rsSet.getString("Departure"));
-				flight.setAge(rsSet.getString("Return"));
+				flight.setDeparture(rsSet.getString("Departure"));
+				flight.setAge(rsSet.getString("ReturnD"));
 				FlightList.add(flight);
 			}
 			return FlightList;
